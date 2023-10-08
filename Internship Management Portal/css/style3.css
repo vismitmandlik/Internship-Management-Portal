@@ -1,0 +1,89 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbarr {
+    width: 1920px;
+    height: 50px;
+    background: #16629E;
+}
+
+.navbarr .charusat-logo {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 1px;
+    left: 25px;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 2440px;
+    max-block-size: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    margin-top: auto;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+select label {
+    width: 25%;
+    padding: 09px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+select {
+    height: 25px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.form-group-noc label,
+.form-group-noc input {
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.radio-inline {
+    display: inline-block;
+    margin-bottom: auto;
+    /* Adjust the spacing between radio buttons and labels */
+}
+
+input[type="text1"],
+select label {
+    width: 7.5%;
+    padding: 09px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Internship Details</title>
+    <link rel="stylesheet" type="text/css" href="/css/style4.css">
+</head>
+
+<body>
+
+    <div class="navbarr">
+        <img class="charusat-logo" src="/assets/charusat-logo.png" />
+    </div>
+    <h1>Student Internship Details</h1>
+    <table id="student-table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>View</th>
+            <th>Status</th>
+        </tr>
+    </table>
+    <div id="pagination-container">
+        <button id="prev-button">Previous</button>
+        <span id="page-number">$page-number</span>
+        <button id="next-button">Next</button>
+    </div>
+
+    <script>
+        const students = [{
+                StudentID: 1,
+                StudentName: "John Doe",
+                Status: "Pending"
+            }, {
+                StudentID: 2,
+                StudentName: "Alice Smith",
+                Status: "Approved"
+            }, {
+                StudentID: 3,
+                StudentName: "Bob Johnson",
+                Status: "Rejected"
+            }, {
+                StudentID: 4,
+                StudentName: "Bob Johnson",
+                Status: "Rejected"
+            }, {
+                StudentID: 5,
+                StudentName: "Bob Johnson",
+                Status: "Rejected"
+            }, {
+                StudentID: 6,
+                StudentName: "Bob Johnson",
+                Status: "Rejected"
+            }, {
+                StudentID: 7,
+                StudentName: "Bob Johnson",
+                Status: "Rejected"
+            }, {
+                StudentID: 8,
+                StudentName: "Bob Johnson",
+                Status: "Rejected"
+            }, {
+                StudentID: 9,
+                StudentName: "Bob Johnson",
+                Status: "Rejected"
+            }, {
+                StudentID: 10,
+                StudentName: "Bob Johnson",
+                Status: "Rejected"
+            },
+            // Add more entries as needed
+        ];
+        const entriesPerPage = 20;
+        let currentPage = 1;
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const studentTable = document.getElementById("student-table");
+            const prevButton = document.getElementById("prev-button");
+            const nextButton = document.getElementById("next-button");
+            const pageNumber = document.getElementById("page-number");
+
+            function updateTable() {
+                // Clear the table
+                while (studentTable.rows.length > 1) {
+                    studentTable.deleteRow(1);
+                }
+
+                const startIdx = (currentPage - 1) * entriesPerPage;
+                const endIdx = startIdx + entriesPerPage;
+
+                for (let i = startIdx; i < Math.min(endIdx, students.length); i++) {
+                    const student = students[i];
+                    const row = studentTable.insertRow();
+                    row.insertCell(0).textContent = student.StudentID;
+                    row.insertCell(1).textContent = student.StudentName;
+                    const viewCell = row.insertCell(2);
+                    const viewLink = document.createElement("a");
+                    viewLink.textContent = "View";
+                    viewLink.href = "/pages/user-details.html"; // Set the link to user-details.html
+                    viewCell.appendChild(viewLink);
+                    row.insertCell(3).textContent = student.Status;
+                }
+
+                pageNumber.textContent = currentPage;
+                prevButton.disabled = currentPage === 1;
+                nextButton.disabled = endIdx >= students.length;
+            }
+
+            prevButton.addEventListener("click", function() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    updateTable();
+                }
+            });
+
+            nextButton.addEventListener("click", function() {
+                const totalPages = Math.ceil(students.length / entriesPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    updateTable();
+                }
+            });
+
+            updateTable();
+        });
+    </script>
+</body>
+
+</html>

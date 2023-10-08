@@ -1,3 +1,21 @@
+body {
+    overflow-x: hidden;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    /* Prevent scrolling */
+}
+
+.container {
+    height: 80vh;
+    /* Make the container 100% of the viewport height */
+}
+
 .desktop {
     background-color: #eef5f9;
     display: flex;
@@ -270,7 +288,7 @@
     font-family: "Inter-Regular", Helvetica;
     font-size: 16px;
     font-weight: 400;
-    left: 799px;
+    left: 699px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;

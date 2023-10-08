@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Internship Application Form</title>
+    <link rel="stylesheet" type="text/css" href="\css\style3.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+
+    <div class="navbarr">
+        <img class="charusat-logo" src="/assets/charusat-logo.png" />
+    </div>
+
+    <div class="container">
+        <h2>Confirmation Form</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" name="studentId" required>
+            </div>
+            <div class="form-group">
+                <label for="semester">Semester:</label>
+                <select id="semester" name="semester" required>
+                    <option value="">Select Semester</option>
+                    <option value="Semester 4">Semester 4</option>
+                    <option value="Semester 6">Semester 6</option>
+                    <!-- Add more semester options as needed -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="companyName">Name of Company:</label>
+                <input type="text" id="companyName" name="companyName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="companyAddress">Address of Company:</label>
+                <input type="text" id="companyAddress" name="companyAddress" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hrDetails">HR Details:</label>
+                <input type="text" id="hrDetails" name="hrDetails" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hrContact">HR Contact Number:</label>
+                <input type="text" id="hrContact" name="hrContact" required>
+            </div>
+
+            <div class="form-group-duration">
+                <label for="duration">Duration :</label>
+                <input type="text1" id="duration">
+                <label for="startDate">Start Date:</label>
+                <input type="text1" id="startDate">
+                <label for="endDate">End Date:</label>
+                <input type="text1" id="endDate">
+            </div>
+
+            <div class="form-group-noc">
+                <label for="requiredNOC">Required NOC:</label>
+                <input type="radio" id="nocYes" name="requiredNOC" value="Yes" required>
+                <label for="nocYes">Yes</label>
+                <input type="radio" id="nocNo" name="requiredNOC" value="No">
+                <label for="nocNo">No</label>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
